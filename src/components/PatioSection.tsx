@@ -21,8 +21,7 @@ export default function PatioSection() {
 
   useEffect(() => {
     const fetchExcel = async () => {
-      const url =
-        'https://docs.google.com/spreadsheets/d/1cKyH-3bt6veiifJnxiuGbKVSmnjviu4HXhCifZbHEDQ/export?format=xlsx';
+      const url =import.meta.env.VITE_LINK_DRIVE;
 
       const res = await fetch(url);
       const blob = await res.blob();

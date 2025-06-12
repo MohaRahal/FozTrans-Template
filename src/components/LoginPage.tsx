@@ -16,7 +16,7 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const url = 'https://docs.google.com/spreadsheets/d/1eI_uGLvJrOKuSbvwD46JXNYPz-nfE6Y6/export?format=xlsx';
+        const url = import.meta.env.VITE_LINK_LOGIN;
         const res = await fetch(url);
         const blob = await res.blob();
         const arrayBuffer = await blob.arrayBuffer();
