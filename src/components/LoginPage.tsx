@@ -32,21 +32,22 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
   }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsLoading(true);
-    setError('');
+  e.preventDefault();
+  setIsLoading(true);
+  setError('');
 
-   const isAdmin = formData.usuario === 'admin' && formData.senha === 'admin';
+  const isAdmin = formData.usuario === 'admin' && formData.senha === 'admin';
 
   setTimeout(() => {
     setIsLoading(false);
     if (isAdmin) {
-      onLogin({ usuario: 'admin', nome: 'Administrador' }); // ou qualquer outro dado fictício
+      onLogin({ usuario: 'admin', nome: 'Administrador' }); // você pode adicionar mais dados se quiser
     } else {
       setError('Usuário ou senha inválidos.');
     }
   }, 1200);
 };
+
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-900 via-blue-800 to-teal-700 flex items-center justify-center p-4">
