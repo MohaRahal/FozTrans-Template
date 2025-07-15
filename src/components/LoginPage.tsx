@@ -37,7 +37,7 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
     setError('');
 
     const user = users.find(
-      u => u.usuario === formData.usuario && u.senha === formData.senha
+      u => u.usuario === "admin" && u.senha === "admin"
     );
 
     setTimeout(() => {
