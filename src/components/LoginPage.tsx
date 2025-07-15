@@ -36,19 +36,17 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
     setIsLoading(true);
     setError('');
 
-    const user = users.find(
-      u => u.usuario === "admin" && u.senha === "admin"
-    );
+   const isAdmin = formData.usuario === 'admin' && formData.senha === 'admin';
 
-    setTimeout(() => {
-      setIsLoading(false);
-      if (user) {
-        onLogin(user);
-      } else {
-        setError('Usuário ou senha inválidos.');
-      }
-    }, 1200);
-  };
+  setTimeout(() => {
+    setIsLoading(false);
+    if (isAdmin) {
+      onLogin({ usuario: 'admin', nome: 'Administrador' }); // ou qualquer outro dado fictício
+    } else {
+      setError('Usuário ou senha inválidos.');
+    }
+  }, 1200);
+};
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-900 via-blue-800 to-teal-700 flex items-center justify-center p-4">
